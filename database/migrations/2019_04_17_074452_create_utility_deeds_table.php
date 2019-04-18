@@ -19,8 +19,8 @@ class CreateUtilityDeedsTable extends Migration
     Schema::create('utility_deeds', function (Blueprint $table) {
       $table->bigIncrements('id');
       $table->unsignedBigInteger('deed_id');
-      $table->integer('factor');
-      $table->integer('double_factor');
+      $table->integer('single_utility_factor');
+      $table->integer('all_utilities_factor');
       $table->timestamps();
 
       $this->makeForeign($table, ['deed_id', 'id', 'deeds']);

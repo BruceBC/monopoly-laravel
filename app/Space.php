@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Space extends Model
@@ -57,12 +56,22 @@ class Space extends Model
   }
 
   /**
-   * Get the tax spaces for the game.
+   * Get the tax space for the game.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function taxSpaces()
+  public function taxSpace()
   {
-    return $this->hasMany(TaxSpace::class);
+    return $this->hasOne(TaxSpace::class);
+  }
+
+  /**
+   * Get the deed space for the game.
+   *
+   * @return HasOne
+   */
+  public function deedSpace()
+  {
+    return $this->hasOne(Deed::class);
   }
 }

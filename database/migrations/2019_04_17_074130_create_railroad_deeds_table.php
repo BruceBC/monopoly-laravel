@@ -20,9 +20,9 @@ class CreateRailroadDeedsTable extends Migration
       $table->bigIncrements('id');
       $table->unsignedBigInteger('deed_id');
       $table->integer('rent');
-      $table->integer('double_rent');
-      $table->integer('triple_rent');
-      $table->integer('quad_rent');
+      $table->integer('two_railroads_owned_rent');
+      $table->integer('three_railroads_owned_rent');
+      $table->integer('four_railroads_owned_rent');
       $table->timestamps();
 
       $this->makeForeign($table, ['deed_id', 'id', 'deeds']);

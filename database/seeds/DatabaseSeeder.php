@@ -40,6 +40,12 @@ class DatabaseSeeder extends Seeder
       AdvanceStreetCardsTableSeeder::class,
       AdvanceRailroadCardsTableSeeder::class,
       AdvanceUtilityCardsTableSeeder::class,
+
+      // Deeds
+      DeedsTableSeeder::class,
+      StreetDeedsTableSeeder::class,
+      RailroadDeedsTableSeeder::class,
+      UtilityDeedsTableSeeder::class,
     ]);
   }
 }

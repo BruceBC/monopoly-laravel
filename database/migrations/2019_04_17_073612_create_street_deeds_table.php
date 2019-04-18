@@ -25,6 +25,7 @@ class CreateStreetDeedsTable extends Migration
       $table->integer('hotel_rent');
       $table->integer('house_cost');
       $table->integer('hotel_cost');
+      $table->string('tag', 255)->unique();
       $table->timestamps();
 
       $this->makeForeign($table, ['deed_id', 'id', 'deeds']);
