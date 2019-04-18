@@ -18,7 +18,7 @@ class CreateCardsTable extends Migration
   {
     Schema::create('cards', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->unsignedBigInteger('space_id');
+      $table->unsignedBigInteger('game_id');
       $table->text('rule');
       $table->enum('action', [
         'pay',
@@ -32,7 +32,7 @@ class CreateCardsTable extends Migration
       ]);
       $table->timestamps();
 
-      $this->makeForeign($table, ['space_id', 'id', 'spaces']);
+      $this->makeForeign($table, ['game_id', 'id', 'games']);
     });
   }
 
