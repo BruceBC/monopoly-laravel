@@ -22,6 +22,7 @@ class CreateDeedsTable extends Migration
       $table->integer('price');
       $table->integer('mortgage');
       $table->integer('unmortgage');
+      $table->integer('set');
       $table->enum('deed', ['street', 'railroad', 'utility']);
       $table->string('tag', 255)->unique();
       $table->timestamps();
