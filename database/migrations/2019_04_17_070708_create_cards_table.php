@@ -29,7 +29,10 @@ class CreateCardsTable extends Migration
         'jail',
         'retreat',
         'pay_per_player',
+        'collect_per_player',
       ]);
+      $table->enum('type', ['community', 'chance']);
+      $table->string('tag', 255)->unique();
       $table->timestamps();
 
       $this->makeForeign($table, ['game_id', 'id', 'games']);

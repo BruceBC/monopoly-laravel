@@ -33,4 +33,14 @@ class Game extends Model
   {
     return $this->hasMany(Space::class);
   }
+
+  /**
+   * Get the cards for the game.
+   *
+   * @return HasMany
+   */
+  public function cards()
+  {
+    return $this->hasMany(Card::class);
+  }
 }

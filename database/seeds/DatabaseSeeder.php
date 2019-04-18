@@ -24,6 +24,13 @@ class DatabaseSeeder extends Seeder
       JailSpacesTableSeeder::class,
       ParkingSpacesTableSeeder::class,
       TaxSpacesTableSeeder::class,
+      CardsTableSeeder::class,
+      PaymentCardsTableSeeder::class,
+      CollectionCardsTableSeeder::class,
+      RepairCardsTableSeeder::class,
+      RetreatCardsTableSeeder::class,
+      PayPerPlayerCardsTableSeeder::class,
+      CollectPerPlayerCardsTableSeeder::class,
     ]);
   }
 }
