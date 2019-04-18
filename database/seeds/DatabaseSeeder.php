@@ -17,13 +17,18 @@ class DatabaseSeeder extends Seeder
     Artisan::call('migrate:refresh');
 
     $this->call([
+      // Games
       GameTableSeeder::class,
       GamePiecesTableSeeder::class,
+
+      // Spaces
       SpacesTableSeeder::class,
       GoSpacesTableSeeder::class,
       JailSpacesTableSeeder::class,
       ParkingSpacesTableSeeder::class,
       TaxSpacesTableSeeder::class,
+
+      // Cards
       CardsTableSeeder::class,
       PaymentCardsTableSeeder::class,
       CollectionCardsTableSeeder::class,
@@ -31,6 +36,10 @@ class DatabaseSeeder extends Seeder
       RetreatCardsTableSeeder::class,
       PayPerPlayerCardsTableSeeder::class,
       CollectPerPlayerCardsTableSeeder::class,
+      AdvanceGoCardsTableSeeder::class,
+      AdvanceStreetCardsTableSeeder::class,
+      AdvanceRailroadCardsTableSeeder::class,
+      AdvanceUtilityCardsTableSeeder::class,
     ]);
   }
 }

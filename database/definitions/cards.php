@@ -47,7 +47,7 @@ return [
     ],
     [
       'rule' => 'Advance to go. (Collect $200)',
-      'action' => 'advance',
+      'action' => 'advance_go',
       'type' => 'community',
       'tag' => 'o-advance-go-community',
     ],
@@ -103,14 +103,14 @@ return [
     ],
     [
       'rule' => 'Advance to boardwalk.',
-      'action' => 'advance',
+      'action' => 'advance_street',
       'type' => 'chance',
       'tag' => 'o-advance-boardwalk',
     ],
     [
       'rule' =>
         'Take a trip to reading railroad. If you pass go, collect $200.',
-      'action' => 'advance',
+      'action' => 'advance_street',
       'type' => 'chance',
       'tag' => 'o-reading-trip',
     ],
@@ -122,14 +122,14 @@ return [
     ],
     [
       'rule' => 'Advance to Illinois Avenue. If you pass go, collect $200.',
-      'action' => 'advance',
+      'action' => 'advance_street',
       'type' => 'chance',
       'tag' => 'o-advance-illinois',
     ],
     [
       'rule' =>
         'Advance to the nearest utility. If unowned, you may buy it from the bank. If owned, throw dice and pay owner 10 times the amount thrown.',
-      'action' => 'advance',
+      'action' => 'advance_utility',
       'type' => 'chance',
       'tag' => 'o-nearest-utility',
     ],
@@ -142,7 +142,7 @@ return [
     ],
     [
       'rule' => 'Advance to go. (Collect $200)',
-      'action' => 'advance',
+      'action' => 'advance_go',
       'type' => 'chance',
       'tag' => 'o-advance-go-chance',
     ],
@@ -162,14 +162,14 @@ return [
     [
       'rule' =>
         'Advance to the nearest railroad. If unowned, you may buy it from the bank. If owned, pay owner twice the rental to which they are otherwise entitled.',
-      'action' => 'advance',
+      'action' => 'advance_railroad',
       'type' => 'chance',
       'tag' => 'o-advance-railroad-1',
     ],
     [
       'rule' =>
         'Advance to the nearest railroad. If unowned, you may buy it from the bank. If owned, pay owner twice the rental to which they are otherwise entitled.',
-      'action' => 'advance',
+      'action' => 'advance_railroad',
       'type' => 'chance',
       'tag' => 'o-advance-railroad-2',
     ],
@@ -194,7 +194,7 @@ return [
     ],
     [
       'rule' => 'Advance to St. Charles Place. If you pass go, collect $200.',
-      'action' => 'advance',
+      'action' => 'advance_street',
       'type' => 'chance',
       'tag' => 'o-advance-st-charles-place',
     ],

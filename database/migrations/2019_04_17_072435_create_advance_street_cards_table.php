@@ -18,11 +18,11 @@ class CreateAdvanceStreetCardsTable extends Migration
   {
     Schema::create('advance_street_cards', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->unsignedBigInteger('advance_card_id');
+      $table->unsignedBigInteger('card_id');
       $table->integer('collect');
       $table->timestamps();
 
-      $this->makeForeign($table, ['advance_card_id', 'id', 'advance_cards']);
+      $this->makeForeign($table, ['card_id', 'id', 'cards']);
     });
   }
 

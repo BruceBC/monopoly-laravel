@@ -84,4 +84,44 @@ class Card extends Model
   {
     return $this->hasMany(RetreatCard::class);
   }
+
+  /**
+   * Get the advance go cards for the card.
+   *
+   * @return HasMany
+   */
+  public function advanceGoCards()
+  {
+    return $this->hasMany(AdvanceGoCard::class);
+  }
+
+  /**
+   * Get the advance street cards for the card.
+   *
+   * @return HasMany
+   */
+  public function advanceStreetCards()
+  {
+    return $this->hasMany(AdvanceStreetCard::class);
+  }
+
+  /**
+   * Get the advance railroad cards for the card.
+   *
+   * @return HasMany
+   */
+  public function advanceRailroadCards()
+  {
+    return $this->hasMany(AdvanceRailroadCard::class);
+  }
+
+  /**
+   * Get the advance utility cards for the card.
+   *
+   * @return HasMany
+   */
+  public function advanceUtilityCards()
+  {
+    return $this->hasMany(AdvanceUtilityCard::class);
+  }
 }

@@ -24,12 +24,15 @@ class CreateCardsTable extends Migration
         'pay',
         'collect',
         'bail',
-        'advance',
         'repair',
         'jail',
         'retreat',
         'pay_per_player',
         'collect_per_player',
+        'advance_go',
+        'advance_street',
+        'advance_railroad',
+        'advance_utility',
       ]);
       $table->enum('type', ['community', 'chance']);
       $table->string('tag', 255)->unique();
