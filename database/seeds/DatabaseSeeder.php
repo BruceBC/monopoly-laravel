@@ -46,6 +46,9 @@ class DatabaseSeeder extends Seeder
       StreetDeedsTableSeeder::class,
       RailroadDeedsTableSeeder::class,
       UtilityDeedsTableSeeder::class,
+
+      // House Rents
+      HouseRentsTableSeeder::class,
     ]);
   }
 }

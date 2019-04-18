@@ -19,10 +19,10 @@ class CreateHouseRentsTable extends Migration
     Schema::create('house_rents', function (Blueprint $table) {
       $table->bigIncrements('id');
       $table->unsignedBigInteger('street_deed_id');
-      $table->integer('single');
-      $table->integer('double');
-      $table->integer('triple');
-      $table->integer('quad');
+      $table->integer('studio'); // single tier
+      $table->integer('duplex'); // second tier
+      $table->integer('ranch'); // third tier
+      $table->integer('mansion'); // fourth tier
       $table->timestamps();
 
       $this->makeForeign($table, ['street_deed_id', 'id', 'street_deeds']);
