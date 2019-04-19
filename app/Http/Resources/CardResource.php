@@ -6,15 +6,15 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class CardResource extends JsonResource
 {
-  /**
-   * Transform the resource into an array.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return array
-   */
-  public function toArray($request)
-  {
-    $relations = [
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    public function toArray($request)
+    {
+        $relations = [
       'payment_card',
       'collection_card',
       'collect_per_player_card',
@@ -27,9 +27,9 @@ class CardResource extends JsonResource
       'advance_utility_card',
     ];
 
-    return array_merge(
+        return array_merge(
       parent::toArray($request),
       (new MergeResource($this, $relations))->handle()
     );
-  }
+    }
 }

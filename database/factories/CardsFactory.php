@@ -2,26 +2,26 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\Game;
 use App\Card;
+use App\Game;
 
-/**
+/*
  * Definitions
  */
 $factory->define(Card::class, function () {
-  return [
-    'rule' => '',
+    return [
+    'rule'   => '',
     'action' => '',
-    'type' => '',
-    'tag' => '',
+    'type'   => '',
+    'tag'    => '',
   ];
 });
 
-/**
+/*
  * States
  */
 $factory->state(Card::class, 'original', function () {
-  return [
+    return [
     'game_id' => Game::where('brand', 'original')->first()->id,
   ];
 });

@@ -7,25 +7,25 @@ use App\GamePiece;
 use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(GamePiece::class, function () {
-  return [
+    return [
     'name' => '',
   ];
 });
 
 $factory->state(GamePiece::class, 'original', function () {
-  return [
+    return [
     'game_id' => Game::where('brand', 'original')->first()->id,
   ];
 });
 
 $factory->state(GamePiece::class, 'jurassic', function () {
-  return [
+    return [
     'game_id' => Game::where('brand', 'jurassic')->first()->id,
   ];
 });
 
 $factory->state(GamePiece::class, 'jurassic', function () {
-  return [
+    return [
     'game_id' => Game::where('brand', 'jurassic')->first()->id,
   ];
 });

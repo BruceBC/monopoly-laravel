@@ -7,33 +7,33 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateGoSpacesTable extends Migration
 {
-  use Migratable;
+    use Migratable;
 
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::create('go_spaces', function (Blueprint $table) {
-      $table->bigIncrements('id');
-      $table->unsignedBigInteger('space_id');
-      $table->integer('passing_price');
-      $table->integer('landing_price');
-      $table->timestamps();
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('go_spaces', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('space_id');
+            $table->integer('passing_price');
+            $table->integer('landing_price');
+            $table->timestamps();
 
-      $this->makeForeign($table, ['space_id', 'id', 'spaces']);
-    });
-  }
+            $this->makeForeign($table, ['space_id', 'id', 'spaces']);
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::dropIfExists('go_spaces');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('go_spaces');
+    }
 }

@@ -7,32 +7,32 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateAdvanceGoCardsTable extends Migration
 {
-  use Migratable;
+    use Migratable;
 
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::create('advance_go_cards', function (Blueprint $table) {
-      $table->bigIncrements('id');
-      $table->unsignedBigInteger('card_id');
-      $table->integer('collect');
-      $table->timestamps();
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('advance_go_cards', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('card_id');
+            $table->integer('collect');
+            $table->timestamps();
 
-      $this->makeForeign($table, ['card_id', 'id', 'cards']);
-    });
-  }
+            $this->makeForeign($table, ['card_id', 'id', 'cards']);
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::dropIfExists('advance_go_cards');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('advance_go_cards');
+    }
 }

@@ -7,32 +7,32 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateAdvanceRailroadCardsTable extends Migration
 {
-  use Migratable;
+    use Migratable;
 
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::create('advance_railroad_cards', function (Blueprint $table) {
-      $table->bigIncrements('id');
-      $table->unsignedBigInteger('card_id');
-      $table->integer('factor');
-      $table->timestamps();
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('advance_railroad_cards', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('card_id');
+            $table->integer('factor');
+            $table->timestamps();
 
-      $this->makeForeign($table, ['card_id', 'id', 'cards']);
-    });
-  }
+            $this->makeForeign($table, ['card_id', 'id', 'cards']);
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::dropIfExists('advance_railroad_cards');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('advance_railroad_cards');
+    }
 }

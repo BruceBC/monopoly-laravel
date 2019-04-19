@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class UtilityDeed extends Model
 {
-  /**
-   * Get the deed that owns the street deed.
-   *
-   * @return BelongsTo
-   */
-  public function deed()
-  {
-    return $this->belongsTo(Deed::class);
-  }
+    /**
+     * Get the deed that owns the street deed.
+     *
+     * @return BelongsTo
+     */
+    public function deed()
+    {
+        return $this->belongsTo(Deed::class);
+    }
 }

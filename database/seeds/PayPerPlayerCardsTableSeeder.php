@@ -1,28 +1,28 @@
 <?php
 
-use Database\factories\CardChildFactory;
 use Illuminate\Database\Seeder;
+use Database\factories\CardChildFactory;
 
 class PayPerPlayerCardsTableSeeder extends Seeder
 {
-  protected $table = 'pay_per_player_cards';
+    protected $table = 'pay_per_player_cards';
 
-  protected $file = 'payPerPlayerCards';
+    protected $file = 'payPerPlayerCards';
 
-  protected $action = 'pay_per_player';
+    protected $action = 'pay_per_player';
 
-  /**
-   * Run the database seeds.
-   *
-   * @return void
-   */
-  public function run()
-  {
-    (new CardChildFactory(
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        (new CardChildFactory(
       $this->table,
       $this->file,
       'original',
       $this->action
     ))->create();
-  }
+    }
 }

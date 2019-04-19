@@ -7,20 +7,20 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateSpacesTable extends Migration
 {
-  use Migratable;
+    use Migratable;
 
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::create('spaces', function (Blueprint $table) {
-      $table->bigIncrements('id');
-      $table->unsignedBigInteger('game_id');
-      $table->string('name', 100);
-      $table->enum('tile', [
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('spaces', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('game_id');
+            $table->string('name', 100);
+            $table->enum('tile', [
         'deed',
         'go',
         'tax',
@@ -30,19 +30,19 @@ class CreateSpacesTable extends Migration
         'chance',
         'community',
       ]);
-      $table->timestamps();
+            $table->timestamps();
 
-      $this->makeForeign($table, ['game_id', 'id', 'games']);
-    });
-  }
+            $this->makeForeign($table, ['game_id', 'id', 'games']);
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::dropIfExists('spaces');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('spaces');
+    }
 }

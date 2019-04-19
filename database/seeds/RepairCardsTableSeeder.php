@@ -1,28 +1,28 @@
 <?php
 
-use Database\factories\CardChildFactory;
 use Illuminate\Database\Seeder;
+use Database\factories\CardChildFactory;
 
 class RepairCardsTableSeeder extends Seeder
 {
-  protected $table = 'repair_cards';
+    protected $table = 'repair_cards';
 
-  protected $file = 'repairCards';
+    protected $file = 'repairCards';
 
-  protected $action = 'repair';
+    protected $action = 'repair';
 
-  /**
-   * Run the database seeds.
-   *
-   * @return void
-   */
-  public function run()
-  {
-    (new CardChildFactory(
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        (new CardChildFactory(
       $this->table,
       $this->file,
       'original',
       $this->action
     ))->create();
-  }
+    }
 }

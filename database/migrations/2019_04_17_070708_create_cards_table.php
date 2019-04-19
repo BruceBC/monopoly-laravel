@@ -7,20 +7,20 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCardsTable extends Migration
 {
-  use Migratable;
+    use Migratable;
 
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::create('cards', function (Blueprint $table) {
-      $table->bigIncrements('id');
-      $table->unsignedBigInteger('game_id');
-      $table->text('rule');
-      $table->enum('action', [
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('cards', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('game_id');
+            $table->text('rule');
+            $table->enum('action', [
         'pay',
         'collect',
         'bail',
@@ -34,21 +34,21 @@ class CreateCardsTable extends Migration
         'advance_railroad',
         'advance_utility',
       ]);
-      $table->enum('type', ['community', 'chance']);
-      $table->string('tag', 255)->unique();
-      $table->timestamps();
+            $table->enum('type', ['community', 'chance']);
+            $table->string('tag', 255)->unique();
+            $table->timestamps();
 
-      $this->makeForeign($table, ['game_id', 'id', 'games']);
-    });
-  }
+            $this->makeForeign($table, ['game_id', 'id', 'games']);
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::dropIfExists('cards');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('cards');
+    }
 }

@@ -7,32 +7,32 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateGamePiecesTable extends Migration
 {
-  use Migratable;
+    use Migratable;
 
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::create('game_pieces', function (Blueprint $table) {
-      $table->bigIncrements('id');
-      $table->unsignedBigInteger('game_id');
-      $table->string('name', 100);
-      $table->timestamps();
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('game_pieces', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('game_id');
+            $table->string('name', 100);
+            $table->timestamps();
 
-      $this->makeForeign($table, ['game_id', 'id', 'games']);
-    });
-  }
+            $this->makeForeign($table, ['game_id', 'id', 'games']);
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::dropIfExists('game_pieces');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('game_pieces');
+    }
 }
