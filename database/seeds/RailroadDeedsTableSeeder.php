@@ -1,28 +1,28 @@
 <?php
 
-use Database\factories\DeedChildFactory;
 use Illuminate\Database\Seeder;
+use Database\factories\DeedChildFactory;
 
 class RailroadDeedsTableSeeder extends Seeder
 {
-  protected $table = 'railroad_deeds';
+    protected $table = 'railroad_deeds';
 
-  protected $file = 'railroadDeeds';
+    protected $file = 'railroadDeeds';
 
-  protected $deedType = 'railroad';
+    protected $deedType = 'railroad';
 
-  /**
-   * Run the database seeds.
-   *
-   * @return void
-   */
-  public function run()
-  {
-    (new DeedChildFactory(
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        (new DeedChildFactory(
       $this->table,
       $this->file,
       'original',
       $this->deedType
     ))->create();
-  }
+    }
 }

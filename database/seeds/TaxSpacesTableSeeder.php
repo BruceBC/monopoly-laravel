@@ -1,28 +1,28 @@
 <?php
 
-use Database\factories\SpaceChildFactory;
 use Illuminate\Database\Seeder;
+use Database\factories\SpaceChildFactory;
 
 class TaxSpacesTableSeeder extends Seeder
 {
-  protected $table = 'tax_spaces';
+    protected $table = 'tax_spaces';
 
-  protected $file = 'taxSpaces';
+    protected $file = 'taxSpaces';
 
-  protected $tile = 'tax';
+    protected $tile = 'tax';
 
-  /**
-   * Run the database seeds.
-   *
-   * @return void
-   */
-  public function run()
-  {
-    (new SpaceChildFactory(
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        (new SpaceChildFactory(
       $this->table,
       $this->file,
       'original',
       $this->tile
     ))->create();
-  }
+    }
 }

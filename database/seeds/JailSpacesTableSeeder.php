@@ -1,28 +1,28 @@
 <?php
 
-use Database\factories\SpaceChildFactory;
 use Illuminate\Database\Seeder;
+use Database\factories\SpaceChildFactory;
 
 class JailSpacesTableSeeder extends Seeder
 {
-  protected $table = 'jail_spaces';
+    protected $table = 'jail_spaces';
 
-  protected $file = 'jailSpaces';
+    protected $file = 'jailSpaces';
 
-  protected $tile = 'jail';
+    protected $tile = 'jail';
 
-  /**
-   * Run the database seeds.
-   *
-   * @return void
-   */
-  public function run()
-  {
-    (new SpaceChildFactory(
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        (new SpaceChildFactory(
       $this->table,
       $this->file,
       'original',
       $this->tile
     ))->create();
-  }
+    }
 }

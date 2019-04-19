@@ -5,18 +5,18 @@ use Illuminate\Support\Facades\Artisan;
 
 class DatabaseSeeder extends Seeder
 {
-  /**
-   * Seed the application's database.
-   *
-   * @return void
-   */
-  public function run()
-  {
-    // Clear database
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        // Clear database
 
-    Artisan::call('migrate:refresh');
+        Artisan::call('migrate:refresh');
 
-    $this->call([
+        $this->call([
       // Games
       GameTableSeeder::class,
       GamePiecesTableSeeder::class,
@@ -50,5 +50,5 @@ class DatabaseSeeder extends Seeder
       // House Rents
       HouseRentsTableSeeder::class,
     ]);
-  }
+    }
 }

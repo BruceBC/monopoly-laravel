@@ -7,35 +7,35 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateRailroadDeedsTable extends Migration
 {
-  use Migratable;
+    use Migratable;
 
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::create('railroad_deeds', function (Blueprint $table) {
-      $table->bigIncrements('id');
-      $table->unsignedBigInteger('deed_id');
-      $table->integer('rent');
-      $table->integer('two_railroads_owned_rent');
-      $table->integer('three_railroads_owned_rent');
-      $table->integer('four_railroads_owned_rent');
-      $table->timestamps();
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('railroad_deeds', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('deed_id');
+            $table->integer('rent');
+            $table->integer('two_railroads_owned_rent');
+            $table->integer('three_railroads_owned_rent');
+            $table->integer('four_railroads_owned_rent');
+            $table->timestamps();
 
-      $this->makeForeign($table, ['deed_id', 'id', 'deeds']);
-    });
-  }
+            $this->makeForeign($table, ['deed_id', 'id', 'deeds']);
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::dropIfExists('railroad_deeds');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('railroad_deeds');
+    }
 }

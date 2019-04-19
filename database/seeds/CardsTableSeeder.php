@@ -7,23 +7,23 @@ use Illuminate\Database\Seeder;
 
 class CardsTableSeeder extends Seeder
 {
-  use Insertable, Definable;
+    use Insertable, Definable;
 
-  /**
-   * Run the database seeds.
-   *
-   * @return void
-   */
-  public function run()
-  {
-    $cards = $this->definition('cards');
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $cards = $this->definition('cards');
 
-    $originalCards = collect($cards['original'])->map(function ($card) {
-      return factory(Card::class)
+        $originalCards = collect($cards['original'])->map(function ($card) {
+            return factory(Card::class)
         ->states('original')
         ->make($card);
-    });
+        });
 
-    $this->insert('cards', $originalCards->toArray());
-  }
+        $this->insert('cards', $originalCards->toArray());
+    }
 }

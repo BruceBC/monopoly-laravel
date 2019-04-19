@@ -1,28 +1,28 @@
 <?php
 
-use Database\factories\CardChildFactory;
 use Illuminate\Database\Seeder;
+use Database\factories\CardChildFactory;
 
 class AdvanceGoCardsTableSeeder extends Seeder
 {
-  protected $table = 'advance_utility_cards';
+    protected $table = 'advance_utility_cards';
 
-  protected $file = 'advanceUtilityCards';
+    protected $file = 'advanceUtilityCards';
 
-  protected $action = 'advance_utility';
+    protected $action = 'advance_utility';
 
-  /**
-   * Run the database seeds.
-   *
-   * @return void
-   */
-  public function run()
-  {
-    (new CardChildFactory(
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        (new CardChildFactory(
       $this->table,
       $this->file,
       'original',
       $this->action
     ))->create();
-  }
+    }
 }

@@ -9,42 +9,42 @@ use Database\traits\Insertable;
 
 class SpaceChildFactory
 {
-  use Insertable, Definable;
+    use Insertable, Definable;
 
-  protected $table;
+    protected $table;
 
-  protected $file;
+    protected $file;
 
-  protected $brand;
+    protected $brand;
 
-  protected $tile;
+    protected $tile;
 
-  public function __construct($table, $file, $brand, $tile)
-  {
-    $this->table = $table;
-    $this->file = $file;
-    $this->brand = $brand;
-    $this->tile = $tile;
-  }
+    public function __construct($table, $file, $brand, $tile)
+    {
+        $this->table = $table;
+        $this->file  = $file;
+        $this->brand = $brand;
+        $this->tile  = $tile;
+    }
 
-  public function create()
-  {
-    $data = $this->definition($this->file);
+    public function create()
+    {
+        $data = $this->definition($this->file);
 
-    $gameId = Game::where('brand', $this->brand)->first()->id;
+        $gameId = Game::where('brand', $this->brand)->first()->id;
 
-    $spaces = Space::where('game_id', $gameId)
+        $spaces = Space::where('game_id', $gameId)
       ->where('tile', $this->tile)
       ->get();
 
-    $collection = collect($spaces)->map(function ($space) use ($data) {
-      return array_merge($data[$this->brand][$space->name], [
+        $collection = collect($spaces)->map(function ($space) use ($data) {
+            return array_merge($data[$this->brand][$space->name], [
         'space_id' => $space->id,
       ]);
-    });
+        });
 
-    $this->insert($this->table, $collection->toArray());
+        $this->insert($this->table, $collection->toArray());
 
-    return $this;
-  }
+        return $this;
+    }
 }
