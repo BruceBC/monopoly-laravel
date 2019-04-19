@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Card extends Model
 {
@@ -26,102 +26,102 @@ class Card extends Model
   }
 
   /**
-   * Get the payment cards for the card.
+   * Get the payment card for the card.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function paymentCards()
+  public function paymentCard()
   {
-    return $this->hasMany(PaymentCard::class);
+    return $this->hasOne(PaymentCard::class);
   }
 
   /**
-   * Get the collection cards for the card.
+   * Get the collection card for the card.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function collectionCards()
+  public function collectionCard()
   {
-    return $this->hasMany(CollectionCard::class);
+    return $this->hasOne(CollectionCard::class);
   }
 
   /**
-   * Get the collect per player cards for the card.
+   * Get the collect per player card for the card.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function collectPerPlayerCards()
+  public function collectPerPlayerCard()
   {
-    return $this->hasMany(CollectPerPlayerCard::class);
+    return $this->hasOne(CollectPerPlayerCard::class);
   }
 
   /**
-   * Get the pay per player cards for the card.
+   * Get the pay per player card for the card.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function payPerPlayerCards()
+  public function payPerPlayerCard()
   {
-    return $this->hasMany(PayPerPlayerCard::class);
+    return $this->hasOne(PayPerPlayerCard::class);
   }
 
   /**
-   * Get the repair cards for the card.
+   * Get the repair card for the card.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function repairCards()
+  public function repairCard()
   {
-    return $this->hasMany(RepairCard::class);
+    return $this->hasOne(RepairCard::class);
   }
 
   /**
-   * Get the retreat cards for the card.
+   * Get the retreat card for the card.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function retreatCards()
+  public function retreatCard()
   {
-    return $this->hasMany(RetreatCard::class);
+    return $this->hasOne(RetreatCard::class);
   }
 
   /**
-   * Get the advance go cards for the card.
+   * Get the advance go card for the card.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function advanceGoCards()
+  public function advanceGoCard()
   {
-    return $this->hasMany(AdvanceGoCard::class);
+    return $this->hasOne(AdvanceGoCard::class);
   }
 
   /**
-   * Get the advance street cards for the card.
+   * Get the advance street card for the card.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function advanceStreetCards()
+  public function advanceStreetCard()
   {
-    return $this->hasMany(AdvanceStreetCard::class);
+    return $this->hasOne(AdvanceStreetCard::class);
   }
 
   /**
-   * Get the advance railroad cards for the card.
+   * Get the advance railroad card for the card.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function advanceRailroadCards()
+  public function advanceRailroadCard()
   {
-    return $this->hasMany(AdvanceRailroadCard::class);
+    return $this->hasOne(AdvanceRailroadCard::class);
   }
 
   /**
-   * Get the advance utility cards for the card.
+   * Get the advance utility card for the card.
    *
-   * @return HasMany
+   * @return HasOne
    */
-  public function advanceUtilityCards()
+  public function advanceUtilityCard()
   {
-    return $this->hasMany(AdvanceUtilityCard::class);
+    return $this->hasOne(AdvanceUtilityCard::class);
   }
 }
