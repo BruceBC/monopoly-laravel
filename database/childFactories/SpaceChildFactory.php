@@ -22,9 +22,9 @@ class SpaceChildFactory
     public function __construct($table, $file, $brand, $tile)
     {
         $this->table = $table;
-        $this->file = $file;
+        $this->file  = $file;
         $this->brand = $brand;
-        $this->tile = $tile;
+        $this->tile  = $tile;
     }
 
     public function create()

@@ -19,7 +19,7 @@ class HouseRentsFactory
     public function __construct($table, $file, $brand)
     {
         $this->table = $table;
-        $this->file = $file;
+        $this->file  = $file;
         $this->brand = $brand;
     }
 
