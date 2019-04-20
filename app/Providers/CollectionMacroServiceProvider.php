@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class CollectionMacroServiceProvider extends ServiceProvider
 {

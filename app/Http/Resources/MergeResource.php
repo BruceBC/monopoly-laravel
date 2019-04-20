@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Support\Str;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\ConditionallyLoadsAttributes;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 
 class MergeResource
 {
@@ -29,8 +29,8 @@ class MergeResource
      * MergeResource constructor.
      *
      * @param JsonResource $instance
-     * @param array $relations
-     * @param array $resources
+     * @param array        $relations
+     * @param array        $resources
      */
     public function __construct(
     JsonResource $instance,
