@@ -20,9 +20,9 @@ class DeedChildFactory
 
     public function __construct($table, $file, $brand, $deedType)
     {
-        $this->table = $table;
-        $this->file = $file;
-        $this->brand = $brand;
+        $this->table    = $table;
+        $this->file     = $file;
+        $this->brand    = $brand;
         $this->deedType = $deedType;
     }
 

@@ -1,7 +1,7 @@
 <?php
 
-use Database\childFactories\SpaceChildFactory;
 use Illuminate\Database\Seeder;
+use Database\childFactories\SpaceChildFactory;
 
 class GoSpacesTableSeeder extends Seeder
 {

@@ -21,9 +21,9 @@ class CardChildFactory
 
     public function __construct($table, $file, $brand, $action)
     {
-        $this->table = $table;
-        $this->file = $file;
-        $this->brand = $brand;
+        $this->table  = $table;
+        $this->file   = $file;
+        $this->brand  = $brand;
         $this->action = $action;
     }
 
