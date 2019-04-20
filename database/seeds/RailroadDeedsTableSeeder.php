@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use Database\childFactories\DeedChildFactory;
+use Illuminate\Database\Seeder;
 
 class RailroadDeedsTableSeeder extends Seeder
 {

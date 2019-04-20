@@ -11,8 +11,8 @@ trait Insertable
      * Inserts a record and applies timestamps by default.
      *
      * @param string $table
-     * @param array $records
-     * @param bool $timestamp
+     * @param array  $records
+     * @param bool   $timestamp
      */
     public function insert($table, $records, $timestamp = true)
     {

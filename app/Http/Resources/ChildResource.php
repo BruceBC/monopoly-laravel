@@ -26,12 +26,13 @@ class ChildResource
      * Returns a closure to apply a resource to a collection or a model.
      *
      * @param $model
+     *
      * @return \Closure
      */
     public function make($model)
     {
         // Make sure it isn't null
-        if (! isset($model)) {
+        if (!isset($model)) {
             return $model;
         }
 

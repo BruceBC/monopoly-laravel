@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use Database\childFactories\SpaceChildFactory;
+use Illuminate\Database\Seeder;
 
 class TaxSpacesTableSeeder extends Seeder
 {

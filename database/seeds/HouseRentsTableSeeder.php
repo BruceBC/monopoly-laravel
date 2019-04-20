@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use Database\childFactories\HouseRentsFactory;
+use Illuminate\Database\Seeder;
 
 class HouseRentsTableSeeder extends Seeder
 {

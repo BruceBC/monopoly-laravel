@@ -8,8 +8,8 @@ trait Migratable
 {
     /**
      * @param Blueprint $table
-     * @param array $args
-     * @param array $cascade
+     * @param array     $args
+     * @param array     $cascade
      */
     public function makeForeign($table, $args, $cascade = ['cascade', 'cascade'])
     {

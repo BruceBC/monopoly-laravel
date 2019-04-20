@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use Database\childFactories\CardChildFactory;
+use Illuminate\Database\Seeder;
 
 class AdvanceRailroadCardsTableSeeder extends Seeder
 {
