@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\factories;
+namespace Database\childFactories;
 
 use App\Game;
 use Database\traits\Definable;
@@ -20,9 +20,9 @@ class DeedChildFactory
 
     public function __construct($table, $file, $brand, $deedType)
     {
-        $this->table    = $table;
-        $this->file     = $file;
-        $this->brand    = $brand;
+        $this->table = $table;
+        $this->file = $file;
+        $this->brand = $brand;
         $this->deedType = $deedType;
     }
 
@@ -32,14 +32,16 @@ class DeedChildFactory
 
         $game = Game::where('brand', $this->brand)->first();
 
-        $spaces = $game->spaces->where('tile', 'deed')->filter(function ($space) {
-            return $space->deedSpace->deed == $this->deedType;
-        });
+        $spaces = $game->spaces
+            ->where('tile', 'deed')
+            ->filter(function ($space) {
+                return $space->deedSpace->deed == $this->deedType;
+            });
 
         $collection = collect($spaces)->map(function ($space) use ($data) {
             return array_merge($data[$this->brand][$space->deedSpace->tag], [
-        'deed_id' => $space->deedSpace->id,
-      ]);
+                'deed_id' => $space->deedSpace->id,
+            ]);
         });
 
         $this->insert($this->table, $collection->toArray());

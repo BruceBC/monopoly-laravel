@@ -1,7 +1,7 @@
 <?php
 
+use Database\childFactories\HouseRentsFactory;
 use Illuminate\Database\Seeder;
-use Database\factories\HouseRentsFactory;
 
 class HouseRentsTableSeeder extends Seeder
 {
@@ -16,6 +16,10 @@ class HouseRentsTableSeeder extends Seeder
      */
     public function run()
     {
-        (new HouseRentsFactory($this->table, $this->file, 'original'))->create();
+        (new HouseRentsFactory(
+            $this->table,
+            $this->file,
+            'original'
+        ))->create();
     }
 }

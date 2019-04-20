@@ -1,7 +1,7 @@
 <?php
 
+use Database\childFactories\CardChildFactory;
 use Illuminate\Database\Seeder;
-use Database\factories\CardChildFactory;
 
 class CollectPerPlayerCardsTableSeeder extends Seeder
 {

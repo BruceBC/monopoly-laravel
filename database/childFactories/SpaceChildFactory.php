@@ -1,12 +1,13 @@
 <?php
 
-namespace Database\factories;
+namespace Database\childFactories;
 
 use App\Game;
+use App\Space;
 use Database\traits\Definable;
 use Database\traits\Insertable;
 
-class HouseRentsFactory
+class SpaceChildFactory
 {
     use Insertable, Definable;
 
@@ -16,29 +17,30 @@ class HouseRentsFactory
 
     protected $brand;
 
-    public function __construct($table, $file, $brand)
+    protected $tile;
+
+    public function __construct($table, $file, $brand, $tile)
     {
         $this->table = $table;
-        $this->file  = $file;
+        $this->file = $file;
         $this->brand = $brand;
+        $this->tile = $tile;
     }
 
     public function create()
     {
         $data = $this->definition($this->file);
 
-        $game = Game::where('brand', $this->brand)->first();
+        $gameId = Game::where('brand', $this->brand)->first()->id;
 
-        $spaces = $game->spaces->where('tile', 'deed')->filter(function ($space) {
-            return $space->deedSpace->deed == 'street';
-        });
+        $spaces = Space::where('game_id', $gameId)
+            ->where('tile', $this->tile)
+            ->get();
 
         $collection = collect($spaces)->map(function ($space) use ($data) {
-            $street = $space->deedSpace->streetDeed;
-
-            return array_merge($data[$this->brand][$street->tag], [
-        'street_deed_id' => $street->id,
-      ]);
+            return array_merge($data[$this->brand][$space->name], [
+                'space_id' => $space->id,
+            ]);
         });
 
         $this->insert($this->table, $collection->toArray());

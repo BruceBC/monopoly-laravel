@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\factories;
+namespace Database\childFactories;
 
 use App\Card;
 use App\Game;
@@ -21,9 +21,9 @@ class CardChildFactory
 
     public function __construct($table, $file, $brand, $action)
     {
-        $this->table  = $table;
-        $this->file   = $file;
-        $this->brand  = $brand;
+        $this->table = $table;
+        $this->file = $file;
+        $this->brand = $brand;
         $this->action = $action;
     }
 
@@ -34,13 +34,13 @@ class CardChildFactory
         $gameId = Game::where('brand', $this->brand)->first()->id;
 
         $cards = Card::where('game_id', $gameId)
-      ->where('action', $this->action)
-      ->get();
+            ->where('action', $this->action)
+            ->get();
 
         $collection = collect($cards)->map(function ($card) use ($data) {
             return array_merge($data[$this->brand][$card->tag], [
-        'card_id' => $card->id,
-      ]);
+                'card_id' => $card->id,
+            ]);
         });
 
         $this->insert($this->table, $collection->toArray());
