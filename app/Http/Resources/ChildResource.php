@@ -32,7 +32,7 @@ class ChildResource
     public function make($model)
     {
         // Make sure it isn't null
-        if (!isset($model)) {
+        if (! isset($model)) {
             return $model;
         }
 

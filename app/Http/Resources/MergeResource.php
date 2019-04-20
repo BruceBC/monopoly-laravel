@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\ConditionallyLoadsAttributes;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Str;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\ConditionallyLoadsAttributes;
 
 class MergeResource
 {
