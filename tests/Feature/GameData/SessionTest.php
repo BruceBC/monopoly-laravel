@@ -7,6 +7,8 @@ use App\Player;
 use App\Session;
 use App\User;
 use DatabaseSeeder;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -120,6 +122,12 @@ abstract class GameBase extends TestCase
 
         $this->createGameBoard();
 
+        // Not sure why I all of a sudden need this now (need to figure out this multiple db thing with tests)
+        Artisan::call('migrate', [
+            '--database' => $this->connection,
+            '--path' => $this->migrations,
+        ]);
+
         $this->createUsers();
     }
 
@@ -127,7 +135,7 @@ abstract class GameBase extends TestCase
     public function artisan($command, $parameters = [])
     {
         if (
-            str_before($command, ':') === 'migrate' &&
+            Str::before($command, ':') === 'migrate' &&
             !isset($parameters['--path'])
         ) {
             $parameters['--path'] = $this->migrations;

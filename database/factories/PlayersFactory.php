@@ -7,10 +7,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Player::class, function () {
     return [
-        'user_id' => '',
-        'session_id' => '',
-        'space_id' => '',
-        'cash' => '',
+        'user_id' => 0,
+        'space_id' => 0,
+        'cash' => 0,
         'active' => false,
         'turn' => false,
         'jailed' => false,
