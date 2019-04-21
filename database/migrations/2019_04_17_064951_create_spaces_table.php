@@ -21,15 +21,15 @@ class CreateSpacesTable extends Migration
             $table->unsignedBigInteger('game_id');
             $table->string('name', 100);
             $table->enum('tile', [
-        'deed',
-        'go',
-        'tax',
-        'parking',
-        'visiting',
-        'jail',
-        'chance',
-        'community',
-      ]);
+                'deed',
+                'go',
+                'tax',
+                'parking',
+                'visiting',
+                'jail',
+                'chance',
+                'community',
+            ]);
             $table->timestamps();
 
             $this->makeForeign($table, ['game_id', 'id', 'games']);
