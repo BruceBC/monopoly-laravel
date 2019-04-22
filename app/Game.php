@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Game extends Model
 {
     /**
+     * Database connection.
+     *
+     * @var string
+     */
+    protected $connection = 'mysql_game_board';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

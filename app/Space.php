@@ -9,6 +9,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Space extends Model
 {
     /**
+     * Database connection.
+     *
+     * @var string
+     */
+    protected $connection = 'mysql_game_board';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

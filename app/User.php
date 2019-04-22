@@ -10,13 +10,6 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
-     * Database connection.
-     *
-     * @var string
-     */
-    protected $connection = 'mysql_game_data';
-
-    /**
      * The attributes that are mass assignable.
      *
      * @var array

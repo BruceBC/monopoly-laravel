@@ -3,14 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Ramsey\Uuid\Uuid;
 
 class Session extends Model
 {
-    protected $connection = 'mysql_game_data';
-
     /**
      * The "booting" method of the model.
      *
