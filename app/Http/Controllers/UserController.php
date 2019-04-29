@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Game;
-use App\Player;
-use App\Session;
 use App\User;
-use DatabaseSeeder;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -35,12 +33,12 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Authenticatable|null
      */
-    public function show(User $user)
+    public function show(Request $request)
     {
-        //
+        return Auth::user();
     }
 
     /**

@@ -33,11 +33,11 @@ class MergeResource
      * @param array        $resources
      */
     public function __construct(
-    JsonResource $instance,
-    array $relations,
-    $resources = []
-  ) {
-        $this->instance  = $instance;
+        JsonResource $instance,
+        array $relations,
+        $resources = []
+    ) {
+        $this->instance = $instance;
         $this->relations = $relations;
         $this->resources = $resources;
     }
@@ -52,15 +52,17 @@ class MergeResource
     public function handle()
     {
         return collect($this->relations)
-      ->map(function ($relation) {
-          $funcName = Str::camel($relation);
+            ->map(function ($relation) {
+                $funcName = Str::camel($relation);
 
-          return $this->mergeWhen($this->instance->$funcName, [
-          $relation => array_key_exists($relation, $this->resources)
-            ? $this->resources[$relation]->make($this->instance->$funcName)
-            : $this->instance->$funcName,
-        ]);
-      })
-      ->toArray();
+                return $this->mergeWhen($this->instance->$funcName, [
+                    $relation => array_key_exists($relation, $this->resources)
+                        ? $this->resources[$relation]->make(
+                            $this->instance->$funcName
+                        )
+                        : $this->instance->$funcName,
+                ]);
+            })
+            ->toArray();
     }
 }

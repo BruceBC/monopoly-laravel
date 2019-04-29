@@ -7,12 +7,12 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class SpaceResource extends JsonResource
 {
     protected $relations = [
-    'go_space',
-    'jail_space',
-    'parking_space',
-    'tax_space',
-    'deed_space',
-  ];
+        'go_space',
+        'jail_space',
+        'parking_space',
+        'tax_space',
+        'deed_space',
+    ];
 
     /**
      * Transform the resource into an array.
@@ -24,12 +24,12 @@ class SpaceResource extends JsonResource
     public function toArray($request)
     {
         $resources = [
-      'deed_space' => new ChildResource(DeedResource::class, false),
-    ];
+            'deed_space' => new ChildResource(DeedResource::class, false),
+        ];
 
         return array_merge(
-      parent::toArray($request),
-      (new MergeResource($this, $this->relations, $resources))->handle()
-    );
+            parent::toArray($request),
+            (new MergeResource($this, $this->relations, $resources))->handle()
+        );
     }
 }
